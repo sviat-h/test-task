@@ -1,10 +1,10 @@
 package com.programmerstasken.analytical_tool.utils;
 
 public enum Symbol {
-    C("C"),
-    D("D"),
-    P("P"),
-    N("N"),
+    C("C"), //waiting timeline
+    D("D"), //query
+    P("P"), //first answer
+    N("N"), //next answer
     DOT("."),
     SPACE(" "),
     ASTERISK("*"),

@@ -6,8 +6,6 @@ public class QueryService {
 
     //TODO fill the class
 
-    public String processQueries(List<String> queries) {
-
-        return null;
+    public void processQueries(List<String> queries) {
     }
 }

@@ -17,27 +17,33 @@ public class TimeLineService {
             TimeLine timeLine = new TimeLine();
             String[] splitTimeLine = timeLineString.split(Symbol.SPACE.toString());
 
-            int indexOfServiceNumber = 1;
-            String serviceNumber = splitTimeLine[indexOfServiceNumber];
-            timeLineValidator.validateAndSaveServiceNumber(timeLine, serviceNumber);
+            int requiredNumberOfQueryParameters = 6;
+            if (splitTimeLine.length != requiredNumberOfQueryParameters) {
+                throw new IllegalArgumentException("Invalid request!");
+            } else {
 
-            int indexOfQuestionType = 2;
-            String questionType = splitTimeLine[indexOfQuestionType];
-            timeLineValidator.validateAndSaveQuestionType(timeLine, questionType);
+                int indexOfServiceNumber = 1;
+                String serviceNumber = splitTimeLine[indexOfServiceNumber];
+                timeLineValidator.validateAndSaveServiceNumber(timeLine, serviceNumber);
 
-            int indexOfResponseType = 3;
-            String responseType = splitTimeLine[indexOfResponseType];
-            timeLineValidator.validateAndSaveResponseType(timeLine, responseType);
+                int indexOfQuestionType = 2;
+                String questionType = splitTimeLine[indexOfQuestionType];
+                timeLineValidator.validateAndSaveQuestionType(timeLine, questionType);
 
-            int indexOfDate = 4;
-            String date = splitTimeLine[indexOfDate];
-            timeLineValidator.validateAndSaveDate(timeLine, date);
+                int indexOfResponseType = 3;
+                String responseType = splitTimeLine[indexOfResponseType];
+                timeLineValidator.validateAndSaveResponseType(timeLine, responseType);
 
-            int indexOfTime = 5;
-            String time = splitTimeLine[indexOfTime];
-            timeLineValidator.validateAndSaveTime(timeLine, time);
+                int indexOfDate = 4;
+                String date = splitTimeLine[indexOfDate];
+                timeLineValidator.validateAndSaveDate(timeLine, date);
 
-            timeLinesList.add(timeLine);
+                int indexOfTime = 5;
+                String time = splitTimeLine[indexOfTime];
+                timeLineValidator.validateAndSaveTime(timeLine, time);
+
+                timeLinesList.add(timeLine);
+            }
         }
     }
 

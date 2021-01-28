@@ -1,5 +1,6 @@
 package com.programmerstasken.analytical_tool;
 
+import com.programmerstasken.analytical_tool.service.AnalyticalAnalyzerService;
 import com.programmerstasken.analytical_tool.service.QueryService;
 import com.programmerstasken.analytical_tool.service.TimeLineService;
 import com.programmerstasken.analytical_tool.utils.Symbol;
@@ -12,6 +13,7 @@ public class AnalyticalToolApp {
     public static void main(String[] args) {
         QueryService queryService = new QueryService();
         TimeLineService timeLineService = new TimeLineService();
+        AnalyticalAnalyzerService analyzerService = new AnalyticalAnalyzerService();
 
         Scanner scanner = new Scanner(System.in);
         int countOfLines = Integer.parseInt(scanner.nextLine());
@@ -33,5 +35,6 @@ public class AnalyticalToolApp {
 
         timeLineService.processTimeLines(timeLines);
         queryService.processQueries(queries);
+        analyzerService.getAnalysis();
     }
 }

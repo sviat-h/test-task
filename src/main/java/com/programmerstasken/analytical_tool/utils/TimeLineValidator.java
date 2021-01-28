@@ -33,10 +33,10 @@ public class TimeLineValidator {
                 timeLine.setQuestionCategory(Integer.parseInt(splitQuestionType[1]));
                 timeLine.setQuestionSubcategory(Integer.parseInt(splitQuestionType[2]));
             } else {
-                throw new IllegalArgumentException("Service Number (" + questionType + ") is not valid!");
+                throw new IllegalArgumentException("Question Type (" + questionType + ") is not valid!");
             }
         } else {
-            throw new IllegalArgumentException("Service Number (" + questionType + ") is not valid!");
+            throw new IllegalArgumentException("Question Type (" + questionType + ") is not valid!");
         }
     }
 
