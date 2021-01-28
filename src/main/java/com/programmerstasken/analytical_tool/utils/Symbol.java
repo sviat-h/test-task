@@ -3,6 +3,8 @@ package com.programmerstasken.analytical_tool.utils;
 public enum Symbol {
     C("C"),
     D("D"),
+    P("P"),
+    N("N"),
     DOT("."),
     SPACE(" "),
     ASTERISK("*"),
