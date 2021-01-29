@@ -11,8 +11,8 @@ import java.util.Scanner;
 
 public class AnalyticalToolApp {
     public static void main(String[] args) {
-        QueryService queryService = new QueryService();
-        TimeLineService timeLineService = new TimeLineService();
+        QueryService queryService = QueryService.getInstance();
+        TimeLineService timeLineService = TimeLineService.getInstance();
         AnalyticalAnalyzerService analyzerService = new AnalyticalAnalyzerService();
 
         Scanner scanner = new Scanner(System.in);

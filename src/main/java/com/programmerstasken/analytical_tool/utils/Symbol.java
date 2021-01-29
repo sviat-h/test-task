@@ -7,7 +7,7 @@ public enum Symbol {
     N("N"), //next answer
     DOT("."),
     SPACE(" "),
-    ASTERISK("*"),
+    ASTERISK("*"), //it means query match all  services/question types
     HYPHEN("-");
 
     private final String symbol;
