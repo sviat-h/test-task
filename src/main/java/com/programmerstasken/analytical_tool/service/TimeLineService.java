@@ -24,7 +24,7 @@ public class TimeLineService {
     RequestValidator requestValidator = new RequestValidator();
     List<TimeLine> timeLinesList = new ArrayList<>();
 
-    public void processTimeLines(List<String> timeLinesString) {
+    public List<TimeLine> processTimeLines(List<String> timeLinesString) {
         for (String timeLineString : timeLinesString) {
             TimeLine timeLine = new TimeLine();
             String[] splitTimeLine = timeLineString.split(Symbol.SPACE.toString());
@@ -57,9 +57,6 @@ public class TimeLineService {
                 timeLinesList.add(timeLine);
             }
         }
-    }
-
-    public List<TimeLine> getTimeLinesList() {
         return timeLinesList;
     }
 }

@@ -24,7 +24,7 @@ public class QueryService {
     RequestValidator requestValidator = new RequestValidator();
     List<Query> queryList = new ArrayList<>();
 
-    public void processQueries(List<String> queries) {
+    public List<Query> processQueries(List<String> queries) {
 
         for (String queryString : queries) {
             Query query = new Query();
@@ -54,9 +54,6 @@ public class QueryService {
                 queryList.add(query);
             }
         }
-    }
-
-    public List<Query> getQueryList() {
         return queryList;
     }
 }

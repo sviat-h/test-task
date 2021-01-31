@@ -1,18 +1,15 @@
 package com.programmerstasken.analytical_tool;
 
 import com.programmerstasken.analytical_tool.service.AnalyticalAnalyzerService;
-import com.programmerstasken.analytical_tool.service.QueryService;
-import com.programmerstasken.analytical_tool.service.TimeLineService;
 import com.programmerstasken.analytical_tool.utils.Symbol;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
 public class AnalyticalToolApp {
     public static void main(String[] args) {
-        QueryService queryService = QueryService.getInstance();
-        TimeLineService timeLineService = TimeLineService.getInstance();
         AnalyticalAnalyzerService analyzerService = new AnalyticalAnalyzerService();
 
         Scanner scanner = new Scanner(System.in);
@@ -33,8 +30,7 @@ public class AnalyticalToolApp {
         }
         scanner.close();
 
-        timeLineService.processTimeLines(timeLines);
-        queryService.processQueries(queries);
-        analyzerService.getAnalysis();
+        String[] analysis = analyzerService.getAnalysis(timeLines, queries);
+        System.out.println(Arrays.toString(analysis));
     }
 }
