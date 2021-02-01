@@ -46,11 +46,13 @@ public class AnalyticalAnalyzerService {
         return response;
     }
 
+    //0 means query match all  services/question types
     private boolean matchService(Query query, TimeLine timeLine) {
         return (query.getServiceNumber() == 0 || timeLine.getServiceNumber() == query.getServiceNumber()) &&
                 (query.getServiceVariation() == 0 || timeLine.getServiceVariation() == query.getServiceVariation());
     }
 
+    //0 means query match all  services/question types
     private boolean matchQuestion(Query query, TimeLine timeLine) {
         return (query.getQuestionType() == 0 || timeLine.getQuestionType() == query.getQuestionType()) &&
                 (query.getQuestionCategory() == 0 || timeLine.getQuestionCategory() == query.getQuestionCategory()) &&
