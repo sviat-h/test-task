@@ -22,4 +22,24 @@ public class TimeLine extends Request {
     public void setTime(int time) {
         this.time = time;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof TimeLine)) return false;
+        if (!super.equals(o)) return false;
+
+        TimeLine timeLine = (TimeLine) o;
+
+        if (getTime() != timeLine.getTime()) return false;
+        return getDate() != null ? getDate().equals(timeLine.getDate()) : timeLine.getDate() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + (getDate() != null ? getDate().hashCode() : 0);
+        result = 31 * result + getTime();
+        return result;
+    }
 }
