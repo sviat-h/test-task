@@ -8,8 +8,8 @@ import java.util.List;
 
 public class AnalyticalAnalyzerService {
 
-    QueryService queryService = QueryService.getInstance();
-    TimeLineService timeLineService = TimeLineService.getInstance();
+    private final QueryService queryService = QueryService.getInstance();
+    private final TimeLineService timeLineService = TimeLineService.getInstance();
 
     public String[] getAnalysis(List<String> timeLines, List<String> queries) {
         List<TimeLine> timeLinesList = timeLineService.processTimeLines(timeLines);
